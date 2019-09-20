@@ -1,0 +1,16 @@
+server: 
+  port: 7003
+spring: 
+  application: 
+    name: service-consumer-hystrix 
+eureka:
+  client:
+    service-url: 
+      defaultZone: http://eureka9003.com:9003/eureka/,http://eureka9002.com:9002/eureka/,http://eureka9001.com:9001/eureka/
+  instance:
+    instance-id: service-consumer-hystrix   #自定义服务名称信息
+    prefer-ip-address: true   
+feign:
+  hystrix:
+    enabled: true
+ 

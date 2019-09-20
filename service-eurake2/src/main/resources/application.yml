@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: service-eureka
+eureka:
+  instance:
+    hostname: eureka9002.com
+  client:
+    service-url:
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://eureka9001.com:9001/eureka/,http://eureka9003.com:9003/eureka/
+server:
+  port: 9002

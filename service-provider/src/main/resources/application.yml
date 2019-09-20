@@ -1,0 +1,29 @@
+server: 
+  port: 8000
+
+mybatis:
+  config-location: "classpath:mybatis/mybatis.cfg.xml"    
+  mapper-locations: "classpath:mybatis/mapper/*.xml"                    
+  type-aliases-package: com.sc.demo.entity           
+
+spring: 
+  application: 
+    name: service-provider                         
+  datasource: 
+    driver-class-name: com.mysql.cj.jdbc.Driver               
+    type: com.alibaba.druid.pool.DruidDataSource             
+    url: "jdbc:mysql://localhost:3306/ssm?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true"                   
+    username: root
+    password: root
+    dbcp2: 
+      initial-size: 5                                        
+      max-total: 5                                           
+      max-wait-millis: 200                                    
+      min-idle: 5                                          
+eureka:
+ client:
+   service-url:
+     defaultZone: http://localhost:9000/eureka
+ instance:
+    instance-id: service-provider8000   #自定义服务名称信息
+    prefer-ip-address: true             #访问路径可以显示IP地址
